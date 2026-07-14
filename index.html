@@ -1129,6 +1129,103 @@
 
   </div>
 
+
+  <!-- Aviso de Privacidad - Gesencro -->
+  <div id="aviso-privacidad-overlay" style="
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:99999;
+">
+    <div style="
+    background:#fff;
+    max-width:700px;
+    margin:5% auto;
+    max-height:80vh;
+    overflow-y:auto;
+    border-radius:6px;
+    padding:30px 35px;
+    font-family:Arial, sans-serif;
+    color:#333;
+    line-height:1.5;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+  ">
+      <h2 style="color:#003b84; margin-top:0;">Aviso de privacidad</h2>
+
+      <p>El presente Aviso de Privacidad (en adelante el "Aviso") establece los términos y condiciones en virtud de los
+        cuales el <strong>GRUPO DE ESPECIALISTAS EN MANEJO INTEGRAL DE ENFERMEDADES CRONICAS S.A.S -GESENCRO
+          S.A.S.-</strong>, con domicilio en Cl 37a no. 27-29 Y 27-31 – Santa Rita de la ciudad de Palmira Valle,
+        realizará el tratamiento de sus datos personales.</p>
+
+      <h4 style="color:#003b84;">1. Tratamiento y finalidad</h4>
+      <p>La recolección, almacenamiento, uso, circulación, supresión y en general todo el tratamiento de la información
+        tendrá las siguientes finalidades:</p>
+      <ul>
+        <li>Adelantar los trámites y servicios que tiene a cargo GESENCRO S.A.S, en ejercicio de sus funciones.</li>
+        <li>Dar a conocer los servicios y trámites ofrecidos por GESENCRO S.A.S.</li>
+        <li>Dar respuesta a peticiones, quejas, reclamos, sugerencias, denuncias y felicitaciones.</li>
+        <li>Consultar y compartir información personal, comercial, financiera, legal, judicial y crediticia con el fin
+          de prevenir y controlar riesgos y/o fraude.</li>
+        <li>Compartir información de usuarios, empleados, accionistas, clientes y proveedores conforme a la política de
+          protección de datos, con aliados comerciales y contractuales.</li>
+        <li>Consultar datos para administrar el Riesgo de Lavado de Activos y Financiación del Terrorismo (SARLAFT), así
+          como para detectar y/o prevenir fraude, corrupción y otras actividades ilegales.</li>
+        <li>Atender requerimientos de organismos de control y vigilancia, entidades administrativas y judiciales.</li>
+        <li>Celebrar contratos con proveedores.</li>
+      </ul>
+
+      <h4 style="color:#003b84;">2. Derechos del titular</h4>
+      <p>Como titular de información tiene derecho a:</p>
+      <p>(i) Acceder gratuitamente a los datos que hayan sido objeto de tratamiento. (ii) Conocer, actualizar y
+        rectificar su información frente a datos parciales, inexactos, incompletos o cuyo tratamiento esté prohibido o
+        no autorizado. (iii) Solicitar prueba de la autorización otorgada. (iv) Presentar quejas ante la
+        Superintendencia de Industria y Comercio (SIC) por infracciones a la normatividad vigente, y en los casos
+        procedentes, suprimir los datos o revocar la autorización otorgada.</p>
+
+      <h4 style="color:#003b84;">3. Mecanismos para conocer cambios en la Política o el Aviso</h4>
+      <p>Los cambios en nuestra Política de Tratamiento de la Información y/o Aviso de Privacidad se publicarán en: <a
+          href="https://gesencro.com/nosotros/" target="_blank">https://gesencro.com/nosotros/</a></p>
+      <p>Para consultas, reclamos o peticiones sobre protección de datos: i) ingrese a <a href="https://gesencro.com/"
+          target="_blank">https://gesencro.com/</a> en la sección de Peticiones, Quejas, Reclamos y Denuncias; ii)
+        escriba a Cl 37a no. 27-29 Y 27-31, Santa Rita, Palmira Valle; iii) envíe un correo a <a
+          href="mailto:proteccion.datos@gesencro.com">proteccion.datos@gesencro.com</a></p>
+
+      <div style="text-align:center; margin-top:20px;">
+        <button id="btn-aceptar-privacidad" style="
+        background:#003b84;
+        color:#fff;
+        border:none;
+        padding:10px 35px;
+        border-radius:5px;
+        cursor:pointer;
+        font-size:15px;
+        font-weight:bold;
+      ">
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var overlay = document.getElementById('aviso-privacidad-overlay');
+      var boton = document.getElementById('btn-aceptar-privacidad');
+
+      if (!localStorage.getItem('avisoPrivacidadAceptado')) {
+        overlay.style.display = 'block';
+      }
+
+      boton.addEventListener('click', function () {
+        localStorage.setItem('avisoPrivacidadAceptado', 'true');
+        overlay.style.display = 'none';
+      });
+    });
+  </script>
+
+
   <!-- Bootstrap 5.3 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

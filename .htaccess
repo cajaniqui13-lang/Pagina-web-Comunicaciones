@@ -1,0 +1,40 @@
+# ============================================
+# Gesencro IPS - .htaccess
+# ============================================
+
+RewriteEngine On
+
+# Servir archivos .html sin necesidad de escribir la extensión
+# Ej: /linea-etica -> linea-etica.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Redirigir siempre a HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirigir www -> sin www (ajusta si prefieres lo contrario)
+RewriteCond %{HTTP_HOST} ^www\.gesencro\.com [NC]
+RewriteRule ^(.*)$ https://gesencro.com/$1 [L,R=301]
+
+# Página de error 404 personalizada (opcional, crea 404.html si quieres usarla)
+ErrorDocument 404 /404.html
+
+# Evitar listado de directorios
+Options -Indexes
+
+# Compresión GZIP para mejorar velocidad
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml
+</IfModule>
+
+# Cache de navegador para recursos estáticos
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>

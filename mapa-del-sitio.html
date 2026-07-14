@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa del Sitio | Gesencro IPS</title>
+<meta name="description" content="Mapa del sitio de Gesencro IPS: encuentra fácilmente todas las secciones, servicios, sedes y páginas institucionales.">
+<link rel="icon" href="/public/favicon-32x32.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+
+<style>
+  .sitemap-hero{
+    background: linear-gradient(135deg, var(--gc-blue-dark) 0%, #0054C2 100%);
+    padding: 130px 0 60px;
+    color:#fff;
+  }
+  .sitemap-hero h1{ font-size: clamp(30px,4vw,44px); color:#fff; margin-bottom:12px; }
+  .sitemap-hero p{ color: rgba(255,255,255,.8); font-size:15px; max-width:560px; }
+  .sitemap-breadcrumb a{ color:#7DD3FC; text-decoration:none; font-size:13px; }
+  .sitemap-breadcrumb span{ color: rgba(255,255,255,.5); font-size:13px; margin:0 6px; }
+
+  .sitemap-col h6{
+    font-family:'DM Sans', sans-serif;
+    font-size:12px; font-weight:600; letter-spacing:.1em;
+    text-transform:uppercase; color: var(--gc-blue); margin-bottom:18px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .sitemap-col h6 i{ font-size:16px; }
+  .sitemap-col ul{ list-style:none; padding:0; margin:0; }
+  .sitemap-col ul li{ margin-bottom:12px; }
+  .sitemap-col ul li a{
+    color: var(--gc-text);
+    text-decoration:none;
+    font-size:15px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition: color .15s;
+  }
+  .sitemap-col ul li a:hover{ color: var(--gc-blue); }
+  .sitemap-col ul li a i{ font-size:12px; color: var(--gc-green); }
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center h-100">
+      <div class="topbar-left d-none d-lg-flex align-items-center">
+        <a href="https://lenuscp.com">Red Lenus Capital Partners</a>
+        <span class="separator">|</span>
+        <span>IPS Habilitada MinSalud</span>
+        <span class="separator">|</span>
+        <span>Lun–Vie 6:00 am–7:00 pm · Sáb 6:00 am–2:00 pm</span>
+      </div>
+      <div class="ms-auto">
+        <a class="btn-gc-wa" href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares" target="_blank" rel="noopener">
+          <i class="bi bi-whatsapp"></i> WhatsApp directo
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg" id="navbar">
+  <div class="container px-4">
+    <a class="navbar-brand me-4" href="/">
+      <img src="/public/img/logo-blue.png" alt="Gesencro IPS — Red Lenus Capital Partners" height="40">
+      <span class="brand-sub d-block">Red Lenus Capital Partners</span>
+    </a>
+    <button class="navbar-toggler border-0 ms-auto me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Abrir menú">
+      <i class="bi bi-list fs-4"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarLinks">
+      <ul class="navbar-nav gap-1">
+        <li class="nav-item"><a class="nav-link" href="/#servicios">Directorio de servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="/#especialistas">Nuestros especialistas</a></li>
+        <li class="nav-item"><a class="nav-link" href="/#sedes">Nuestras sedes</a></li>
+        <li class="nav-item"><a class="nav-link" href="/#conocenos">Conócenos</a></li>
+        <li class="nav-item"><a class="nav-link" href="/#noticias">Noticias</a></li>
+        <li class="nav-item"><a class="nav-link linea-etica" href="/linea-etica">Línea de Ética</a></li>
+      </ul>
+    </div>
+    <div class="d-none d-lg-flex align-items-center gap-3 ms-3">
+      <a class="nav-email" href="mailto:info@gesencro.com"><i class="bi bi-envelope"></i> info@gesencro.com</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ OFFCANVAS MOBILE NAV ============ -->
+<div class="offcanvas offcanvas-end bg-gc-dark" id="mobileNav" tabindex="-1" aria-labelledby="mobileNavLabel">
+  <div class="offcanvas-header border-bottom border-white border-opacity-10">
+    <img src="/public/img/logo-white.png" alt="Gesencro IPS" height="32">
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column pt-4">
+    <nav class="d-flex flex-column gap-1">
+      <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#servicios">Directorio de servicios</a>
+      <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#especialistas">Nuestros especialistas</a>
+      <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#sedes">Nuestras sedes</a>
+      <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#conocenos">Conócenos</a>
+      <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#noticias">Noticias</a>
+      <a class="text-white-50 text-decoration-none py-2 px-3 rounded" href="/linea-etica">Línea de Ética</a>
+    </nav>
+    <div class="mt-auto pb-2">
+      <a class="btn-gc-wa w-100 justify-content-center" href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares" target="_blank" rel="noopener">
+        <i class="bi bi-whatsapp"></i> Agendar por WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="sitemap-hero">
+  <div class="container px-4">
+    <div class="sitemap-breadcrumb mb-3">
+      <a href="/">Inicio</a><span>/</span><span style="color:rgba(255,255,255,.85)">Mapa del sitio</span>
+    </div>
+    <h1>Mapa del sitio</h1>
+    <p>Encuentra rápidamente cualquier sección, servicio o página institucional de Gesencro IPS.</p>
+  </div>
+</header>
+
+<!-- ============ CONTENIDO ============ -->
+<section class="py-5" style="background:#fff;">
+  <div class="container px-4 py-4">
+    <div class="row g-5">
+
+      <div class="col-md-6 col-lg-3 sitemap-col">
+        <h6><i class="bi bi-house"></i> Páginas principales</h6>
+        <ul>
+          <li><a href="/"><i class="bi bi-caret-right-fill"></i> Inicio</a></li>
+          <li><a href="/#especialistas"><i class="bi bi-caret-right-fill"></i> Nuestros especialistas</a></li>
+          <li><a href="/#conocenos"><i class="bi bi-caret-right-fill"></i> Conócenos</a></li>
+          <li><a href="/#noticias"><i class="bi bi-caret-right-fill"></i> Noticias sobre salud</a></li>
+          <li><a href="/#faq"><i class="bi bi-caret-right-fill"></i> Preguntas frecuentes</a></li>
+          <li><a href="/#contacto"><i class="bi bi-caret-right-fill"></i> Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-6 col-lg-3 sitemap-col">
+        <h6><i class="bi bi-clipboard2-pulse"></i> Servicios y chequeos</h6>
+        <ul>
+          <li><a href="/#servicios"><i class="bi bi-caret-right-fill"></i> Laboratorio clínico (15% dcto.)</a></li>
+          <li><a href="/#chequeos"><i class="bi bi-caret-right-fill"></i> Chequeo Básico</a></li>
+          <li><a href="/#chequeos"><i class="bi bi-caret-right-fill"></i> Corazón Sano</a></li>
+          <li><a href="/#chequeos"><i class="bi bi-caret-right-fill"></i> Diabetes Hormonal</a></li>
+          <li><a href="/#chequeos"><i class="bi bi-caret-right-fill"></i> Diabetes Renal</a></li>
+          <li><a href="/#chequeos"><i class="bi bi-caret-right-fill"></i> Huesos Fuertes</a></li>
+          <li><a href="/#chequeos"><i class="bi bi-caret-right-fill"></i> Tiroides OK</a></li>
+          <li><a href="/#chequeos"><i class="bi bi-caret-right-fill"></i> Cirugía Segura</a></li>
+          <li><a href="/#chequeos"><i class="bi bi-caret-right-fill"></i> Sexualidad Segura</a></li>
+          <li><a href="/#chequeos"><i class="bi bi-caret-right-fill"></i> Mamá Segura / Mamá Plus</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-6 col-lg-3 sitemap-col">
+        <h6><i class="bi bi-geo-alt"></i> Sedes</h6>
+        <ul>
+          <li><a href="/#sedes"><i class="bi bi-caret-right-fill"></i> Palmira (Sede Principal)</a></li>
+          <li><a href="/#sedes"><i class="bi bi-caret-right-fill"></i> Armenia</a></li>
+          <li><a href="/#sedes"><i class="bi bi-caret-right-fill"></i> Buenaventura</a></li>
+          <li><a href="/#sedes"><i class="bi bi-caret-right-fill"></i> Buga</a></li>
+          <li><a href="/#sedes"><i class="bi bi-caret-right-fill"></i> El Cerrito</a></li>
+          <li><a href="/#sedes"><i class="bi bi-caret-right-fill"></i> Candelaria</a></li>
+          <li><a href="/#sedes"><i class="bi bi-caret-right-fill"></i> Pereira</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-6 col-lg-3 sitemap-col">
+        <h6><i class="bi bi-building"></i> Institución</h6>
+        <ul>
+          <li><a href="/linea-etica"><i class="bi bi-caret-right-fill"></i> Línea de Ética</a></li>
+          <li><a href="https://lenuscp.com" target="_blank" rel="noopener"><i class="bi bi-caret-right-fill"></i> Red Lenus Capital Partners</a></li>
+          <li><a href="mailto:pqrs@gesencro.com"><i class="bi bi-caret-right-fill"></i> PQRS</a></li>
+          <li><a href="#"><i class="bi bi-caret-right-fill"></i> Política de tratamiento de datos</a></li>
+          <li><a href="#"><i class="bi bi-caret-right-fill"></i> Aviso de privacidad</a></li>
+          <li><a href="#"><i class="bi bi-caret-right-fill"></i> Derechos y deberes del paciente</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="footer">
+  <div class="container px-4">
+    <div class="row gy-5">
+      <div class="col-12 col-lg-4">
+        <img src="/public/img/logo-white.png" alt="Gesencro IPS" class="mb-3" height="36">
+        <p class="footer-brand-sub">IPS Privada Especializada en Laboratorio Clínico y Chequeos Preventivos.<br>7 Sedes Distribuidas en el Valle del Cauca, Quindío y Risaralda.</p>
+        <div class="mt-4 d-flex gap-2">
+          <a class="social-btn" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a class="social-btn" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a class="social-btn" href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+        <div class="mt-4">
+          <img src="/public/img/logo-vigilado-supersalud.png" alt="Vigilado Supersalud" height="40">
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>SERVICIOS</h6>
+        <a href="/#servicios">Laboratorio clínico</a>
+        <a href="/#chequeos">Chequeo Básico</a>
+        <a href="/#chequeos">Corazón Sano</a>
+        <a href="/#chequeos">Diabetes Hormonal</a>
+        <a href="/#chequeos">Mamá Segura</a>
+        <a href="/#chequeos">Todos los chequeos</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>SEDES</h6>
+        <a href="/#sedes">Palmira</a>
+        <a href="/#sedes">Armenia</a>
+        <a href="/#sedes">Buenaventura</a>
+        <a href="/#sedes">Buga</a>
+        <a href="/#sedes">El Cerrito</a>
+        <a href="/#sedes">Candelaria</a>
+        <a href="/#sedes">Pereira</a>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h6>INSTITUCIÓN</h6>
+        <a href="/#conocenos">Quiénes somos</a>
+        <a href="https://lenuscp.com" target="_blank" rel="noopener">Red Lenus Capital Partners</a>
+        <a href="/linea-etica">Línea de Ética</a>
+        <a href="mailto:pqrs@gesencro.com">PQRS</a>
+        <a href="/#faq">Preguntas frecuentes</a>
+        <a href="/#contacto">Contacto</a>
+        <a href="#">Política de tratamiento de datos</a>
+        <a href="#">Aviso de privacidad</a>
+        <a href="#">Derechos y deberes del paciente</a>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+      <span>© 2026 Gesencro IPS · Red Lenus Capital Partners · IPS Habilitada MinSalud · Todos los derechos reservados</span>
+      <a href="/mapa-del-sitio" class="mb-0">Mapa del sitio</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP WIDGET ============ -->
+<div class="wa-widget">
+  <div class="wa-message" id="waMessage">
+    <span class="close-msg" onclick="cerrarMensaje()">×</span>
+    <div class="wa-header"><strong>GESENCRO IPS</strong></div>
+    <div class="wa-text">👋 Hola.<br>¿En qué podemos ayudarte? Estamos atentos a cualquier duda.</div>
+  </div>
+  <a class="wa-float" href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp con Gesencro IPS">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
