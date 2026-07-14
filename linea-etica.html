@@ -1,400 +1,525 @@
 <!DOCTYPE html>
 <html lang="es-CO">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Línea Ética | Gesencro IPS — Red Lenus Capital Partners</title>
-<meta name="description" content="Canal confidencial de reporte ético de Gesencro IPS. Reporta de forma anónima conductas indebidas, fraude, acoso o riesgos a la seguridad del paciente.">
-<link rel="icon" href="/public/favicon-32x32.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Línea Ética | Gesencro IPS — Red Lenus Capital Partners</title>
+  <meta name="description"
+    content="Canal confidencial de reporte ético de Gesencro IPS. Reporta de forma anónima conductas indebidas, fraude, acoso o riesgos a la seguridad del paciente.">
+  <link rel="icon" href="/public/favicon-32x32.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
 
-<style>
-  /* Estilos propios de la página Línea Ética — usan las variables de marca ya definidas en styles.css */
-  .etica-hero{
-    position: relative;
-    background: url('/public/img/banner-linea-etica-pagina.png') center/cover no-repeat;
-    padding: 140px 0 80px;
-    color:#fff;
-    overflow:hidden;
-  }
-  .etica-hero::before{
-    content:"";
-    position:absolute; inset:0;
-    background: linear-gradient(135deg, rgba(0,49,116,.85) 0%, rgba(0,84,194,.75) 50%, rgba(0,31,60,.85) 100%);
-    z-index:1;
-  }
-  .etica-hero .container{ position:relative; z-index:2; }
-  .etica-hero .eyebrow{ color:#7DD3FC; }
-  .etica-hero h1{ font-size: clamp(32px,4.5vw,48px); color:#fff; margin-bottom:18px; }
-  .etica-hero p{ color: rgba(255,255,255,.85); font-size:16px; max-width:640px; }
-  .etica-breadcrumb a{ color:#7DD3FC; text-decoration:none; font-size:13px; }
-  .etica-breadcrumb span{ color: rgba(255,255,255,.5); font-size:13px; margin:0 6px; }
+  <style>
+    /* Estilos propios de la página Línea Ética — usan las variables de marca ya definidas en styles.css */
+    .etica-hero {
+      position: relative;
+      background: url('/public/img/banner-linea-etica-pagina.png') center/cover no-repeat;
+      padding: 140px 0 80px;
+      color: #fff;
+      overflow: hidden;
+    }
 
-  .etica-card{
-    background:#fff;
-    border:1.5px solid var(--gc-border);
-    border-radius: var(--gc-radius);
-    padding: 32px 28px;
-    height:100%;
-    box-shadow: var(--gc-shadow);
-  }
-  .etica-icon-wrap{
-    width:52px; height:52px;
-    border-radius:14px;
-    background: rgba(0,84,194,0.08);
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:18px;
-  }
-  .etica-icon-wrap i{ font-size:24px; color: var(--gc-blue); }
-  .etica-card h3{
-    font-family:'DM Sans', sans-serif;
-    font-size:18px; font-weight:600;
-    color: var(--gc-blue-dark);
-    margin-bottom:10px;
-  }
-  .etica-card p{ font-size:14px; color: var(--gc-text-mid); line-height:1.65; margin-bottom:0; }
-  .etica-card strong{ color: var(--gc-text); }
+    .etica-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 49, 116, .85) 0%, rgba(0, 84, 194, .75) 50%, rgba(0, 31, 60, .85) 100%);
+      z-index: 1;
+    }
 
-  .etica-note{
-    background: rgba(0,84,194,0.04);
-    border: 1px solid rgba(0,84,194,0.10);
-    border-radius: var(--gc-radius);
-    padding: 20px 24px;
-    font-size: 14px;
-    color: var(--gc-text-mid);
-    margin-top: 24px;
-  }
+    .etica-hero .container {
+      position: relative;
+      z-index: 2;
+    }
 
-  #etica-form{ background: linear-gradient(135deg, var(--gc-blue-dark) 0%, #0054C2 100%); padding: 90px 0; }
+    .etica-hero .eyebrow {
+      color: #7DD3FC;
+    }
 
-  .canal-item{
-    display:flex; gap:14px; align-items:flex-start;
-    background:#fff;
-    border:1px solid var(--gc-border);
-    border-radius: var(--gc-radius);
-    padding:22px;
-    height:100%;
-  }
-  .canal-item i{ font-size:20px; color: var(--gc-green); margin-top:2px; flex-shrink:0; }
-  .canal-item h6{
-    font-family:'DM Sans', sans-serif;
-    font-size:11px; font-weight:600; letter-spacing:.08em;
-    text-transform:uppercase; color: var(--gc-blue-dark); margin-bottom:6px;
-  }
-  .canal-item p{ font-size:14px; color: var(--gc-text-mid); margin-bottom:0; }
-</style>
+    .etica-hero h1 {
+      font-size: clamp(32px, 4.5vw, 48px);
+      color: #fff;
+      margin-bottom: 18px;
+    }
+
+    .etica-hero p {
+      color: rgba(255, 255, 255, .85);
+      font-size: 16px;
+      max-width: 640px;
+    }
+
+    .etica-breadcrumb a {
+      color: #7DD3FC;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .etica-breadcrumb span {
+      color: rgba(255, 255, 255, .5);
+      font-size: 13px;
+      margin: 0 6px;
+    }
+
+    .etica-card {
+      background: #fff;
+      border: 1.5px solid var(--gc-border);
+      border-radius: var(--gc-radius);
+      padding: 32px 28px;
+      height: 100%;
+      box-shadow: var(--gc-shadow);
+    }
+
+    .etica-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(0, 84, 194, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .etica-icon-wrap i {
+      font-size: 24px;
+      color: var(--gc-blue);
+    }
+
+    .etica-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gc-blue-dark);
+      margin-bottom: 10px;
+    }
+
+    .etica-card p {
+      font-size: 14px;
+      color: var(--gc-text-mid);
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+
+    .etica-card strong {
+      color: var(--gc-text);
+    }
+
+    .etica-note {
+      background: rgba(0, 84, 194, 0.04);
+      border: 1px solid rgba(0, 84, 194, 0.10);
+      border-radius: var(--gc-radius);
+      padding: 20px 24px;
+      font-size: 14px;
+      color: var(--gc-text-mid);
+      margin-top: 24px;
+    }
+
+    #etica-form {
+      background: linear-gradient(135deg, var(--gc-blue-dark) 0%, #0054C2 100%);
+      padding: 90px 0;
+    }
+
+    .canal-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid var(--gc-border);
+      border-radius: var(--gc-radius);
+      padding: 22px;
+      height: 100%;
+    }
+
+    .canal-item i {
+      font-size: 20px;
+      color: var(--gc-green);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .canal-item h6 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gc-blue-dark);
+      margin-bottom: 6px;
+    }
+
+    .canal-item p {
+      font-size: 14px;
+      color: var(--gc-text-mid);
+      margin-bottom: 0;
+    }
+  </style>
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "xmecdz0gav");
+  </script>
 </head>
+
 <body>
 
-<!-- ============ TOPBAR ============ -->
-<div class="topbar">
-  <div class="container-fluid px-4">
-    <div class="d-flex justify-content-between align-items-center h-100">
-      <div class="topbar-left d-none d-lg-flex align-items-center">
-        <a href="https://lenuscp.com">Red Lenus Capital Partners</a>
-        <span class="separator">|</span>
-        <span>IPS Habilitada MinSalud</span>
-        <span class="separator">|</span>
-        <span>Lun–Vie 6:00 am–7:00 pm · Sáb 6:00 am–2:00 pm</span>
+  <!-- ============ TOPBAR ============ -->
+  <div class="topbar">
+    <div class="container-fluid px-4">
+      <div class="d-flex justify-content-between align-items-center h-100">
+        <div class="topbar-left d-none d-lg-flex align-items-center">
+          <a href="https://lenuscp.com">Red Lenus Capital Partners</a>
+          <span class="separator">|</span>
+          <span>IPS Habilitada MinSalud</span>
+          <span class="separator">|</span>
+          <span>Lun–Vie 6:00 am–7:00 pm · Sáb 6:00 am–2:00 pm</span>
+        </div>
+        <div class="ms-auto">
+          <a class="btn-gc-wa"
+            href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares"
+            target="_blank" rel="noopener">
+            <i class="bi bi-whatsapp"></i> WhatsApp directo
+          </a>
+        </div>
       </div>
-      <div class="ms-auto">
-        <a class="btn-gc-wa" href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares" target="_blank" rel="noopener">
-          <i class="bi bi-whatsapp"></i> WhatsApp directo
+    </div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container px-4">
+      <a class="navbar-brand me-4" href="/">
+        <img src="/public/img/logo-blue.png" alt="Gesencro IPS — Red Lenus Capital Partners" height="40">
+        <span class="brand-sub d-block">Red Lenus Capital Partners</span>
+      </a>
+      <button class="navbar-toggler border-0 ms-auto me-2" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Abrir menú">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarLinks">
+        <ul class="navbar-nav gap-1">
+          <li class="nav-item"><a class="nav-link" href="/#servicios">Directorio de servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#especialistas">Nuestros especialistas</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#sedes">Nuestras sedes</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#conocenos">Conócenos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#noticias">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link linea-etica active" href="/linea-etica">Línea de Ética</a></li>
+        </ul>
+      </div>
+      <div class="d-none d-lg-flex align-items-center gap-3 ms-3">
+        <a class="nav-email" href="mailto:denuncias@gesencro.com"><i class="bi bi-envelope"></i> info@gesencro.com</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ OFFCANVAS MOBILE NAV ============ -->
+  <div class="offcanvas offcanvas-end bg-gc-dark" id="mobileNav" tabindex="-1" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas-header border-bottom border-white border-opacity-10">
+      <img src="/public/img/logo-white.png" alt="Gesencro IPS" height="32">
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column pt-4">
+      <nav class="d-flex flex-column gap-1">
+        <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#servicios">Directorio de servicios</a>
+        <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#especialistas">Nuestros especialistas</a>
+        <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#sedes">Nuestras sedes</a>
+        <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#conocenos">Conócenos</a>
+        <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#noticias">Noticias</a>
+        <a class="text-white-50 text-decoration-none py-2 px-3 rounded" href="/linea-etica">Línea de Ética</a>
+      </nav>
+      <div class="mt-auto pb-2">
+        <a class="btn-gc-wa w-100 justify-content-center"
+          href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares"
+          target="_blank" rel="noopener">
+          <i class="bi bi-whatsapp"></i> Agendar por WhatsApp
         </a>
       </div>
     </div>
   </div>
-</div>
 
-<!-- ============ NAVBAR ============ -->
-<nav class="navbar navbar-expand-lg" id="navbar">
-  <div class="container px-4">
-    <a class="navbar-brand me-4" href="/">
-      <img src="/public/img/logo-blue.png" alt="Gesencro IPS — Red Lenus Capital Partners" height="40">
-      <span class="brand-sub d-block">Red Lenus Capital Partners</span>
+  <!-- ============ HERO / INTRO ============ -->
+  <header class="etica-hero">
+    <div class="container px-4">
+      <div class="etica-breadcrumb mb-3">
+        <a href="/">Inicio</a><span>/</span><span style="color:rgba(255,255,255,.85)">Línea de Ética</span>
+      </div>
+      <span class="eyebrow">COMPROMETIDOS CON LA INTEGRIDAD</span>
+      <h1>Una llamada a la transparencia</h1>
+      <p>En Gesencro IPS construimos relaciones basadas en la honestidad, el respeto y el cuidado. Tu voz es fundamental
+        para mantener nuestro estándar ético y proteger el bienestar de toda nuestra comunidad de salud.</p>
+    </div>
+  </header>
+
+  <!-- ============ QUIÉNES / CONFIDENCIALIDAD ============ -->
+  <section class="py-5" style="background:#fff; padding-top:80px; padding-bottom:40px;">
+    <div class="container px-4">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="etica-card">
+            <div class="etica-icon-wrap"><i class="bi bi-people"></i></div>
+            <h3>¿Quiénes pueden reportar?</h3>
+            <p>La Línea Ética está disponible para todos nuestros grupos de interés. Si eres <strong>colaborador
+                (asistencial o administrativo), médico, especialista independiente, proveedor, aliado estratégico,
+                paciente o familiar</strong> y notas un comportamiento contrario a nuestras políticas, puedes reportarlo
+              de forma directa e independiente.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="etica-card">
+            <div class="etica-icon-wrap"><i class="bi bi-shield-check"></i></div>
+            <h3>Confidencialidad y No Represalias</h3>
+            <p>Garantizamos absoluta reserva sobre tu identidad y el contenido de tu reporte. Puedes elegir presentar tu
+              reporte de forma <strong>100% anónima</strong>. Gesencro IPS cuenta con una estricta política de
+              <strong>cero represalias</strong>: ningún colaborador o tercero sufrirá consecuencias por reportar de
+              buena fe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUÉ REPORTAR ============ -->
+  <section class="pb-5" style="background:#fff;">
+    <div class="container px-4">
+      <div class="etica-card">
+        <div class="etica-icon-wrap"><i class="bi bi-clipboard2-check"></i></div>
+        <h3>¿Qué situaciones se deben reportar?</h3>
+        <p class="mb-3">Este canal está destinado a conductas indebidas y violaciones éticas. Por favor, utilízalo para
+          reportar:</p>
+        <ul class="check-list mb-3">
+          <li><i class="bi bi-check-circle-fill"></i> Fraude, hurto o desvío de recursos de salud.</li>
+          <li><i class="bi bi-check-circle-fill"></i> Sobornos, comisiones o conflicto de intereses.</li>
+          <li><i class="bi bi-check-circle-fill"></i> Acoso laboral, sexual o conductas discriminatorias.</li>
+          <li><i class="bi bi-check-circle-fill"></i> Riesgos clínicos graves que atenten contra la seguridad del
+            paciente.</li>
+          <li><i class="bi bi-check-circle-fill"></i> Filtración o mal uso de datos clínicos e historias médicas (Ley
+            1581).</li>
+          <li><i class="bi bi-check-circle-fill"></i> Incumplimiento de regulaciones del Ministerio de Salud.</li>
+        </ul>
+        <div class="etica-note">
+          💡 <strong>Nota:</strong> para felicitaciones, quejas sobre tiempos de espera o solicitudes médicas generales,
+          te sugerimos utilizar los canales estándar de atención al usuario (SIAU) para una resolución más ágil.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORMULARIO ============ -->
+  <section id="etica-form">
+    <div class="container px-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="form-card">
+            <h3 class="text-white mb-1" style="font-family:'DM Sans',sans-serif; font-weight:600;">Formulario de Reporte
+              Seguro</h3>
+            <p class="mb-4" style="color:rgba(255,255,255,.75); font-size:14px;">Completa el formulario a continuación.
+              Los campos con asterisco (*) son de diligenciamiento obligatorio para iniciar la investigación.</p>
+
+            <form id="reporteEticoForm" novalidate>
+              <div class="mb-3">
+                <label class="form-label" for="tipoIncidente">TIPO DE INCIDENTE *</label>
+                <select class="form-select" id="tipoIncidente" required>
+                  <option value="" selected disabled>-- Selecciona una categoría --</option>
+                  <option>Fraude, hurto o desvío de recursos</option>
+                  <option>Conflicto de intereses o sobornos</option>
+                  <option>Acoso o discriminación laboral</option>
+                  <option>Riesgo a la seguridad del paciente</option>
+                  <option>Violación de confidencialidad de datos</option>
+                  <option>Otro incumplimiento ético</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="descripcionIncidente">DESCRIPCIÓN DETALLADA *</label>
+                <textarea class="form-control" id="descripcionIncidente" rows="5" required
+                  placeholder="Describe los hechos con el mayor detalle posible: fecha, lugar, personas involucradas..."></textarea>
+              </div>
+
+              <p class="mb-3" style="color:rgba(255,255,255,.6); font-size:13px;">
+                🕵️‍♂️ ¿Deseas reportar de forma anónima? Deja los siguientes dos campos vacíos. Tu reporte se procesará
+                con el mismo nivel de seriedad e investigación.
+              </p>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="nombreReportante">NOMBRE COMPLETO (OPCIONAL)</label>
+                  <input type="text" class="form-control" id="nombreReportante">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="contactoReportante">TELÉFONO O CORREO (OPCIONAL)</label>
+                  <input type="text" class="form-control" id="contactoReportante">
+                </div>
+              </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="confirmaBuenaFe" required>
+                <label class="form-check-label" for="confirmaBuenaFe"
+                  style="color:rgba(255,255,255,.85); font-size:13px;">
+                  Confirmo que presento este reporte de buena fe, basándome en hechos reales u observaciones de carácter
+                  ético institucional. *
+                </label>
+              </div>
+
+              <button type="submit" class="btn-gc-green w-100 justify-content-center">Enviar Reporte Confidencial
+                →</button>
+              <p class="form-legal">Tu reporte será remitido de forma confidencial a la Oficina de Cumplimiento de
+                Gesencro IPS.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OTROS CANALES ============ -->
+  <section class="py-5" style="background: var(--gc-bg);">
+    <div class="container px-4">
+      <h2 class="text-center mb-5" style="font-size:clamp(24px,3vw,32px); color:var(--gc-blue-dark);">Otros Canales de
+        Reporte</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="canal-item">
+            <i class="bi bi-clock"></i>
+            <div>
+              <h6>Horario de Atención</h6>
+              <p>Lunes a Viernes: 8:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="canal-item">
+            <i class="bi bi-telephone"></i>
+            <div>
+              <h6>Línea Telefónica Directa</h6>
+              <p>333 602 6222 — Opción Línea Ética</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="canal-item">
+            <i class="bi bi-envelope"></i>
+            <div>
+              <h6>Correo Electrónico Directo</h6>
+              <p>denuncias@gesencro.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="canal-item">
+            <i class="bi bi-geo-alt"></i>
+            <div>
+              <h6>Atención Presencial</h6>
+              <p>Sede Principal Palmira — Oficina de Cumplimiento</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="footer">
+    <div class="container px-4">
+      <div class="row gy-5">
+        <div class="col-12 col-lg-4">
+          <img src="/public/img/logo-white.png" alt="Gesencro IPS" class="mb-3" height="36">
+          <p class="footer-brand-sub">IPS Privada Especializada en Laboratorio Clínico y Chequeos Preventivos.<br>7
+            Sedes Distribuidas en el Valle del Cauca, Quindío y Risaralda.</p>
+          <div class="mt-4 d-flex gap-2">
+            <a class="social-btn" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a class="social-btn" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a class="social-btn"
+              href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares"
+              target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+          <div class="mt-4">
+            <img src="/public/img/logo-vigilado-supersalud.png" alt="Vigilado Supersalud" height="40">
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>SERVICIOS</h6>
+          <a href="/#servicios">Laboratorio clínico</a>
+          <a href="/#chequeos">Chequeo Básico</a>
+          <a href="/#chequeos">Corazón Sano</a>
+          <a href="/#chequeos">Diabetes Hormonal</a>
+          <a href="/#chequeos">Mamá Segura</a>
+          <a href="/#chequeos">Todos los chequeos</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>SEDES</h6>
+          <a href="/#sedes">Palmira</a>
+          <a href="/#sedes">Armenia</a>
+          <a href="/#sedes">Buenaventura</a>
+          <a href="/#sedes">Buga</a>
+          <a href="/#sedes">El Cerrito</a>
+          <a href="/#sedes">Candelaria</a>
+          <a href="/#sedes">Pereira</a>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h6>INSTITUCIÓN</h6>
+          <a href="/#conocenos">Quiénes somos</a>
+          <a href="https://lenuscp.com" target="_blank" rel="noopener">Red Lenus Capital Partners</a>
+          <a href="/linea-etica">Línea de Ética</a>
+          <a href="mailto:pqrs@gesencro.com">PQRS</a>
+          <a href="/#faq">Preguntas frecuentes</a>
+          <a href="/#contacto">Contacto</a>
+          <a href="#">Política de tratamiento de datos</a>
+          <a href="#">Aviso de privacidad</a>
+          <a href="#">Derechos y deberes del paciente</a>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+        <span>© 2026 Gesencro IPS · Red Lenus Capital Partners · IPS Habilitada MinSalud · Todos los derechos
+          reservados</span>
+        <a href="/mapa-del-sitio" class="mb-0">Mapa del sitio</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ WHATSAPP WIDGET ============ -->
+  <div class="wa-widget">
+    <div class="wa-message" id="waMessage">
+      <span class="close-msg" onclick="cerrarMensaje()">×</span>
+      <div class="wa-header"><strong>GESENCRO IPS</strong></div>
+      <div class="wa-text">👋 Hola.<br>¿En qué podemos ayudarte? Estamos atentos a cualquier duda.</div>
+    </div>
+    <a class="wa-float"
+      href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares"
+      target="_blank" rel="noopener" aria-label="Chatear por WhatsApp con Gesencro IPS">
+      <i class="bi bi-whatsapp"></i>
     </a>
-    <button class="navbar-toggler border-0 ms-auto me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Abrir menú">
-      <i class="bi bi-list fs-4"></i>
-    </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarLinks">
-      <ul class="navbar-nav gap-1">
-        <li class="nav-item"><a class="nav-link" href="/#servicios">Directorio de servicios</a></li>
-        <li class="nav-item"><a class="nav-link" href="/#especialistas">Nuestros especialistas</a></li>
-        <li class="nav-item"><a class="nav-link" href="/#sedes">Nuestras sedes</a></li>
-        <li class="nav-item"><a class="nav-link" href="/#conocenos">Conócenos</a></li>
-        <li class="nav-item"><a class="nav-link" href="/#noticias">Noticias</a></li>
-        <li class="nav-item"><a class="nav-link linea-etica active" href="/linea-etica">Línea de Ética</a></li>
-      </ul>
-    </div>
-    <div class="d-none d-lg-flex align-items-center gap-3 ms-3">
-      <a class="nav-email" href="mailto:denuncias@gesencro.com"><i class="bi bi-envelope"></i> info@gesencro.com</a>
-    </div>
   </div>
-</nav>
 
-<!-- ============ OFFCANVAS MOBILE NAV ============ -->
-<div class="offcanvas offcanvas-end bg-gc-dark" id="mobileNav" tabindex="-1" aria-labelledby="mobileNavLabel">
-  <div class="offcanvas-header border-bottom border-white border-opacity-10">
-    <img src="/public/img/logo-white.png" alt="Gesencro IPS" height="32">
-    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
-  </div>
-  <div class="offcanvas-body d-flex flex-column pt-4">
-    <nav class="d-flex flex-column gap-1">
-      <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#servicios">Directorio de servicios</a>
-      <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#especialistas">Nuestros especialistas</a>
-      <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#sedes">Nuestras sedes</a>
-      <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#conocenos">Conócenos</a>
-      <a class="text-white text-decoration-none py-2 px-3 rounded" href="/#noticias">Noticias</a>
-      <a class="text-white-50 text-decoration-none py-2 px-3 rounded" href="/linea-etica">Línea de Ética</a>
-    </nav>
-    <div class="mt-auto pb-2">
-      <a class="btn-gc-wa w-100 justify-content-center" href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares" target="_blank" rel="noopener">
-        <i class="bi bi-whatsapp"></i> Agendar por WhatsApp
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ============ HERO / INTRO ============ -->
-<header class="etica-hero">
-  <div class="container px-4">
-    <div class="etica-breadcrumb mb-3">
-      <a href="/">Inicio</a><span>/</span><span style="color:rgba(255,255,255,.85)">Línea de Ética</span>
-    </div>
-    <span class="eyebrow">COMPROMETIDOS CON LA INTEGRIDAD</span>
-    <h1>Una llamada a la transparencia</h1>
-    <p>En Gesencro IPS construimos relaciones basadas en la honestidad, el respeto y el cuidado. Tu voz es fundamental para mantener nuestro estándar ético y proteger el bienestar de toda nuestra comunidad de salud.</p>
-  </div>
-</header>
-
-<!-- ============ QUIÉNES / CONFIDENCIALIDAD ============ -->
-<section class="py-5" style="background:#fff; padding-top:80px; padding-bottom:40px;">
-  <div class="container px-4">
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="etica-card">
-          <div class="etica-icon-wrap"><i class="bi bi-people"></i></div>
-          <h3>¿Quiénes pueden reportar?</h3>
-          <p>La Línea Ética está disponible para todos nuestros grupos de interés. Si eres <strong>colaborador (asistencial o administrativo), médico, especialista independiente, proveedor, aliado estratégico, paciente o familiar</strong> y notas un comportamiento contrario a nuestras políticas, puedes reportarlo de forma directa e independiente.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="etica-card">
-          <div class="etica-icon-wrap"><i class="bi bi-shield-check"></i></div>
-          <h3>Confidencialidad y No Represalias</h3>
-          <p>Garantizamos absoluta reserva sobre tu identidad y el contenido de tu reporte. Puedes elegir presentar tu reporte de forma <strong>100% anónima</strong>. Gesencro IPS cuenta con una estricta política de <strong>cero represalias</strong>: ningún colaborador o tercero sufrirá consecuencias por reportar de buena fe.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ QUÉ REPORTAR ============ -->
-<section class="pb-5" style="background:#fff;">
-  <div class="container px-4">
-    <div class="etica-card">
-      <div class="etica-icon-wrap"><i class="bi bi-clipboard2-check"></i></div>
-      <h3>¿Qué situaciones se deben reportar?</h3>
-      <p class="mb-3">Este canal está destinado a conductas indebidas y violaciones éticas. Por favor, utilízalo para reportar:</p>
-      <ul class="check-list mb-3">
-        <li><i class="bi bi-check-circle-fill"></i> Fraude, hurto o desvío de recursos de salud.</li>
-        <li><i class="bi bi-check-circle-fill"></i> Sobornos, comisiones o conflicto de intereses.</li>
-        <li><i class="bi bi-check-circle-fill"></i> Acoso laboral, sexual o conductas discriminatorias.</li>
-        <li><i class="bi bi-check-circle-fill"></i> Riesgos clínicos graves que atenten contra la seguridad del paciente.</li>
-        <li><i class="bi bi-check-circle-fill"></i> Filtración o mal uso de datos clínicos e historias médicas (Ley 1581).</li>
-        <li><i class="bi bi-check-circle-fill"></i> Incumplimiento de regulaciones del Ministerio de Salud.</li>
-      </ul>
-      <div class="etica-note">
-        💡 <strong>Nota:</strong> para felicitaciones, quejas sobre tiempos de espera o solicitudes médicas generales, te sugerimos utilizar los canales estándar de atención al usuario (SIAU) para una resolución más ágil.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FORMULARIO ============ -->
-<section id="etica-form">
-  <div class="container px-4">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="form-card">
-          <h3 class="text-white mb-1" style="font-family:'DM Sans',sans-serif; font-weight:600;">Formulario de Reporte Seguro</h3>
-          <p class="mb-4" style="color:rgba(255,255,255,.75); font-size:14px;">Completa el formulario a continuación. Los campos con asterisco (*) son de diligenciamiento obligatorio para iniciar la investigación.</p>
-
-          <form id="reporteEticoForm" novalidate>
-            <div class="mb-3">
-              <label class="form-label" for="tipoIncidente">TIPO DE INCIDENTE *</label>
-              <select class="form-select" id="tipoIncidente" required>
-                <option value="" selected disabled>-- Selecciona una categoría --</option>
-                <option>Fraude, hurto o desvío de recursos</option>
-                <option>Conflicto de intereses o sobornos</option>
-                <option>Acoso o discriminación laboral</option>
-                <option>Riesgo a la seguridad del paciente</option>
-                <option>Violación de confidencialidad de datos</option>
-                <option>Otro incumplimiento ético</option>
-              </select>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label" for="descripcionIncidente">DESCRIPCIÓN DETALLADA *</label>
-              <textarea class="form-control" id="descripcionIncidente" rows="5" required placeholder="Describe los hechos con el mayor detalle posible: fecha, lugar, personas involucradas..."></textarea>
-            </div>
-
-            <p class="mb-3" style="color:rgba(255,255,255,.6); font-size:13px;">
-              🕵️‍♂️ ¿Deseas reportar de forma anónima? Deja los siguientes dos campos vacíos. Tu reporte se procesará con el mismo nivel de seriedad e investigación.
-            </p>
-
-            <div class="row g-3 mb-3">
-              <div class="col-md-6">
-                <label class="form-label" for="nombreReportante">NOMBRE COMPLETO (OPCIONAL)</label>
-                <input type="text" class="form-control" id="nombreReportante">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="contactoReportante">TELÉFONO O CORREO (OPCIONAL)</label>
-                <input type="text" class="form-control" id="contactoReportante">
-              </div>
-            </div>
-
-            <div class="form-check mb-4">
-              <input class="form-check-input" type="checkbox" id="confirmaBuenaFe" required>
-              <label class="form-check-label" for="confirmaBuenaFe" style="color:rgba(255,255,255,.85); font-size:13px;">
-                Confirmo que presento este reporte de buena fe, basándome en hechos reales u observaciones de carácter ético institucional. *
-              </label>
-            </div>
-
-            <button type="submit" class="btn-gc-green w-100 justify-content-center">Enviar Reporte Confidencial →</button>
-            <p class="form-legal">Tu reporte será remitido de forma confidencial a la Oficina de Cumplimiento de Gesencro IPS.</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ OTROS CANALES ============ -->
-<section class="py-5" style="background: var(--gc-bg);">
-  <div class="container px-4">
-    <h2 class="text-center mb-5" style="font-size:clamp(24px,3vw,32px); color:var(--gc-blue-dark);">Otros Canales de Reporte</h2>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="canal-item">
-          <i class="bi bi-clock"></i>
-          <div><h6>Horario de Atención</h6><p>Lunes a Viernes: 8:00 AM – 5:00 PM</p></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="canal-item">
-          <i class="bi bi-telephone"></i>
-          <div><h6>Línea Telefónica Directa</h6><p>333 602 6222 — Opción Línea Ética</p></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="canal-item">
-          <i class="bi bi-envelope"></i>
-          <div><h6>Correo Electrónico Directo</h6><p>denuncias@gesencro.com</p></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="canal-item">
-          <i class="bi bi-geo-alt"></i>
-          <div><h6>Atención Presencial</h6><p>Sede Principal Palmira — Oficina de Cumplimiento</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer id="footer">
-  <div class="container px-4">
-    <div class="row gy-5">
-      <div class="col-12 col-lg-4">
-        <img src="/public/img/logo-white.png" alt="Gesencro IPS" class="mb-3" height="36">
-        <p class="footer-brand-sub">IPS Privada Especializada en Laboratorio Clínico y Chequeos Preventivos.<br>7 Sedes Distribuidas en el Valle del Cauca, Quindío y Risaralda.</p>
-        <div class="mt-4 d-flex gap-2">
-          <a class="social-btn" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a class="social-btn" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a class="social-btn" href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-        </div>
-        <div class="mt-4">
-          <img src="/public/img/logo-vigilado-supersalud.png" alt="Vigilado Supersalud" height="40">
-        </div>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h6>SERVICIOS</h6>
-        <a href="/#servicios">Laboratorio clínico</a>
-        <a href="/#chequeos">Chequeo Básico</a>
-        <a href="/#chequeos">Corazón Sano</a>
-        <a href="/#chequeos">Diabetes Hormonal</a>
-        <a href="/#chequeos">Mamá Segura</a>
-        <a href="/#chequeos">Todos los chequeos</a>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h6>SEDES</h6>
-        <a href="/#sedes">Palmira</a>
-        <a href="/#sedes">Armenia</a>
-        <a href="/#sedes">Buenaventura</a>
-        <a href="/#sedes">Buga</a>
-        <a href="/#sedes">El Cerrito</a>
-        <a href="/#sedes">Candelaria</a>
-        <a href="/#sedes">Pereira</a>
-      </div>
-      <div class="col-12 col-lg-4">
-        <h6>INSTITUCIÓN</h6>
-        <a href="/#conocenos">Quiénes somos</a>
-        <a href="https://lenuscp.com" target="_blank" rel="noopener">Red Lenus Capital Partners</a>
-        <a href="/linea-etica">Línea de Ética</a>
-        <a href="mailto:pqrs@gesencro.com">PQRS</a>
-        <a href="/#faq">Preguntas frecuentes</a>
-        <a href="/#contacto">Contacto</a>
-        <a href="#">Política de tratamiento de datos</a>
-        <a href="#">Aviso de privacidad</a>
-        <a href="#">Derechos y deberes del paciente</a>
-      </div>
-    </div>
-    <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
-      <span>© 2026 Gesencro IPS · Red Lenus Capital Partners · IPS Habilitada MinSalud · Todos los derechos reservados</span>
-      <a href="/mapa-del-sitio" class="mb-0">Mapa del sitio</a>
-    </div>
-  </div>
-</footer>
-
-<!-- ============ WHATSAPP WIDGET ============ -->
-<div class="wa-widget">
-  <div class="wa-message" id="waMessage">
-    <span class="close-msg" onclick="cerrarMensaje()">×</span>
-    <div class="wa-header"><strong>GESENCRO IPS</strong></div>
-    <div class="wa-text">👋 Hola.<br>¿En qué podemos ayudarte? Estamos atentos a cualquier duda.</div>
-  </div>
-  <a class="wa-float" href="https://api.whatsapp.com/send?phone=573103829322&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20citas%20particulares" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp con Gesencro IPS">
-    <i class="bi bi-whatsapp"></i>
-  </a>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/js/main.js"></script>
-<script>
-  // Envío del formulario de reporte ético: arma un correo prellenado hacia denuncias@gesencro.com
-  document.getElementById('reporteEticoForm')?.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(!this.checkValidity()){ this.classList.add('was-validated'); return; }
-    const tipo = document.getElementById('tipoIncidente').value;
-    const desc = document.getElementById('descripcionIncidente').value.trim();
-    const nombre = document.getElementById('nombreReportante').value.trim();
-    const contacto = document.getElementById('contactoReportante').value.trim();
-    const asunto = 'Reporte Línea Ética - ' + tipo;
-    const cuerpo = [
-      'Tipo de incidente: ' + tipo,
-      'Descripción: ' + desc,
-      nombre ? 'Nombre: ' + nombre : 'Reporte anónimo',
-      contacto ? 'Contacto: ' + contacto : ''
-    ].filter(Boolean).join('\n\n');
-    window.location.href = 'mailto:denuncias@gesencro.com?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(cuerpo);
-  });
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    // Envío del formulario de reporte ético: arma un correo prellenado hacia denuncias@gesencro.com
+    document.getElementById('reporteEticoForm')?.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!this.checkValidity()) { this.classList.add('was-validated'); return; }
+      const tipo = document.getElementById('tipoIncidente').value;
+      const desc = document.getElementById('descripcionIncidente').value.trim();
+      const nombre = document.getElementById('nombreReportante').value.trim();
+      const contacto = document.getElementById('contactoReportante').value.trim();
+      const asunto = 'Reporte Línea Ética - ' + tipo;
+      const cuerpo = [
+        'Tipo de incidente: ' + tipo,
+        'Descripción: ' + desc,
+        nombre ? 'Nombre: ' + nombre : 'Reporte anónimo',
+        contacto ? 'Contacto: ' + contacto : ''
+      ].filter(Boolean).join('\n\n');
+      window.location.href = 'mailto:denuncias@gesencro.com?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(cuerpo);
+    });
+  </script>
 </body>
+
 </html>
